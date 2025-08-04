@@ -1,0 +1,17 @@
+name: Enforce Branch Protection
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # every Monday
+  workflow_dispatch:
+
+jobs:
+  check-protection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch protections
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/${{ github.repository }}/branches/main/protection
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

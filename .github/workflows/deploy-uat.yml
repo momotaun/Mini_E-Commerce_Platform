@@ -1,0 +1,17 @@
+name: Deploy to UAT
+
+on:
+  push:
+    branches:
+      - uat
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to UAT environment
+        run: echo "Deploying to UAT..."  # Replace with your actual deploy command
