@@ -1,4 +1,19 @@
+version: "3.8"
+
 services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # Comment out in production to avoid exposing DB
+    ports:
+      - "5432:5432"
+
   backend:
     build:
       context: ./backend
@@ -9,6 +24,11 @@ services:
       - 8000:8000
     volumes:
       - ./backend/app:/app
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-postgres}
+      # Add other backend env vars here
+    depends_on:
+      - db
 
   frontend:
     build:
@@ -30,3 +50,6 @@ services:
       - /app/node_modules
     depends_on:
       - backend
+
+volumes:
+  postgres_data:
