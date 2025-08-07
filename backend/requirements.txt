@@ -6,3 +6,6 @@ asyncpg
 alembic
 passlib[bcrypt]
 python-jose[cryptography]
+pytest
+pytest-asyncio
+httpx
