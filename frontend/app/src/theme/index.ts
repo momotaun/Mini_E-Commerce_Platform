@@ -19,20 +19,54 @@ export const theme = {
     heading: "'Rubik', 'Montserrat', sans-serif",
   },
   fontSizes: {
-    xs: "0.75rem",    // 12px
-    sm: "0.875rem",   // 14px
-    md: "1rem",       // 16px
-    lg: "1.125rem",   // 18px
-    xl: "1.25rem",    // 20px
-    "2xl": "1.5rem",  // 24px
-    "3xl": "1.875rem", // 30px
-    "4xl": "2.25rem", // 36px
+    display1: "5rem",   // 80px
+    display2: "4.5rem", // 72px
+    display3: "4rem",   // 64px
+    display4: "3.5rem", // 56px
+    display5: "3rem",   // 48px
+    display6: "2.625rem", // 42px
+    h1: "2.5rem",       // 40px
+    h2: "2rem",         // 32px
+    h3: "1.75rem",      // 28px
+    h4: "1.5rem",       // 24px
+    h5: "1.25rem",      // 20px
+    xl: "1.25rem",      // 20px (Extra Large)
+    lg: "1.125rem",     // 18px (Large)
+    h6: "1rem",         // 16px
+    nav: "1rem",        // 16px (Navigation Link Regular)
+    md: "1rem",         // 16px (Regular)
+    sm: "0.875rem",     // 14px (Small)
+    navSm: "0.875rem",  // 14px (Navigation Link Small)
+    xs: "0.75rem",      // 12px (Extra Small)
+    navXs: "0.75rem",   // 12px (Navigation Link Extra Small)
+  },
+  lineHeights: {
+    display1: "96px",
+    display2: "96px",
+    display3: "78px",
+    display4: "68px",
+    display5: "62px",
+    display6: "54px",
+    h1: "48px",
+    h2: "42px",
+    h3: "36px",
+    h4: "32px",
+    h5: "28px",
+    xl: "30px",
+    lg: "27px",
+    h6: "24px",
+    nav: "24px",
+    md: "24px",
+    sm: "22px",
+    navSm: "20px",
+    xs: "18px",
+    navXs: "16px",
   },
   fontWeights: {
-    normal: 400,
-    medium: 500,
-    semibold: 600,
     bold: 700,
+    semibold: 600,
+    medium: 500,
+    regular: 400,
   },
   spacing: {
     xs: "4px",
