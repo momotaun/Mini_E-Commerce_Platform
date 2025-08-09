@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchHello } from "../services/exampleService";
+import Logo from "../components/Logo";
 
 interface HelloResponse {
   message: string;
@@ -24,6 +25,7 @@ export default function HelloPage() {
 
     return (
         <div>
+            <Logo image="/public/logo.svg" brand="Cartzilla" width={36} height={36} />
             {loading && <p>Loading...</p>}
             {error && <p style={{ color: "red" }}>Error: {error}</p>}
             {helloData && <p>{helloData.message}</p>}
