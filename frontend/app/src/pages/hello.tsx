@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchHello } from "../services/exampleService";
 import { Logo, Button, Input } from "../components";
+import Radio from "../components/RadioButton";
+import RadioGroup from "../components/RadioGroup";
 import { FaHome, FaSearch } from "react-icons/fa";
 
 interface HelloResponse {
@@ -11,6 +13,7 @@ export default function HelloPage() {
     const [helloData, setHelloData] = useState<HelloResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
+    const [selected, setSelected] = useState("option1");
 
     useEffect(() => {
         fetchHello()
@@ -41,6 +44,11 @@ export default function HelloPage() {
                 mode="light"
             />
 
+            <Radio label="Idle" state="idle" mode="light" name="demo" />
+            <Radio label="Checked" state="checked" mode="light" name="demo" defaultChecked />
+            <Radio label="Disabled" state="disabled" mode="light" name="demo" disabled />
+            <Radio label="Dark Mode" state="idle" mode="dark" name="demo2" />
+
             <Input
                 size="lg"
                 placeholder="Disabled input"
@@ -66,6 +74,18 @@ export default function HelloPage() {
                 iconPosition="left"
                 state="idle"
                 mode="dark"
+            />
+
+            <RadioGroup
+                name="demoGroup"
+                value={selected}
+                onChange={setSelected}
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                mode="light"
             />
 
             {loading && <p>Loading...</p>}
