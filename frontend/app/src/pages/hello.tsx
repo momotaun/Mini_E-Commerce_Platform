@@ -9,7 +9,8 @@ import {
     CheckboxGroup,
     Switch,
     SwitchGroup,
-    QuantityInput
+    QuantityInput,
+    Select
 } from "../components";
 import { FaHome, FaSearch } from "react-icons/fa";
 
@@ -27,6 +28,7 @@ export default function HelloPage() {
     const [qtyLight, setQtyLight] = useState(1);
     const [qtyDark, setQtyDark] = useState(1);
     const [qtyDisabled, setQtyDisabled] = useState(1);
+    const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
     useEffect(() => {
         fetchHello()
@@ -192,6 +194,20 @@ export default function HelloPage() {
                     { label: "Disabled", value: "disabled", state: "disabled" },
                 ]}
                 mode="dark"
+            />
+
+            <Select
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                value={selectedOption}
+                onChange={setSelectedOption}
+                placeholder="Placeholder"
+                mode="light" // or "dark"
+                state="idle" // "idle" | "focus" | "error" | "disabled" | "success"
+                size="md"
             />
 
             {loading && <p>Loading...</p>}

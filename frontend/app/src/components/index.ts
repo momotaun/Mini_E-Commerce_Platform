@@ -8,3 +8,4 @@ export { CheckboxGroup } from "./CheckboxGroup";
 export { Switch } from "./Switch";
 export { SwitchGroup } from "./SwitchGroup";
 export { default as QuantityInput } from "./QuantityInput";
+export { default as Select } from "./Select";
