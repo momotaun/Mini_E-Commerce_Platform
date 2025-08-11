@@ -8,7 +8,8 @@ import {
     RadioGroup,
     CheckboxGroup,
     Switch,
-    SwitchGroup
+    SwitchGroup,
+    QuantityInput
 } from "../components";
 import { FaHome, FaSearch } from "react-icons/fa";
 
@@ -23,6 +24,9 @@ export default function HelloPage() {
     const [selected, setSelected] = useState("option1");
     const [checked, setChecked] = useState<string[]>(["option1"]);
     const [switches, setSwitches] = useState<string[]>(["option1"]);
+    const [qtyLight, setQtyLight] = useState(1);
+    const [qtyDark, setQtyDark] = useState(1);
+    const [qtyDisabled, setQtyDisabled] = useState(1);
 
     useEffect(() => {
         fetchHello()
@@ -51,6 +55,44 @@ export default function HelloPage() {
                 iconPosition="left"
                 state="idle"
                 mode="light"
+            />
+
+            {/* Showcase QuantityInput in various states and modes */}
+            <QuantityInput
+                value={qtyLight}
+                onChange={setQtyLight}
+                min={1}
+                max={10}
+                mode="light"
+                state="idle"
+                size="md"
+            />
+            <QuantityInput
+                value={qtyDark}
+                onChange={setQtyDark}
+                min={1}
+                max={10}
+                mode="dark"
+                state="idle"
+                size="md"
+            />
+            <QuantityInput
+                value={qtyDisabled}
+                onChange={setQtyDisabled}
+                min={1}
+                max={10}
+                mode="light"
+                state="disabled"
+                size="md"
+            />
+            <QuantityInput
+                value={qtyDark}
+                onChange={setQtyDark}
+                min={1}
+                max={10}
+                mode="dark"
+                state="disabled"
+                size="md"
             />
 
             <Radio label="Idle" state="idle" mode="light" name="demo" />
