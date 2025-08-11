@@ -7,3 +7,4 @@ export { Checkbox } from "./Checkbox";
 export { CheckboxGroup } from "./CheckboxGroup";
 export { Switch } from "./Switch";
 export { SwitchGroup } from "./SwitchGroup";
+export { default as QuantityInput } from "./QuantityInput";
