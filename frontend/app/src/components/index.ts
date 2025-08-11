@@ -5,3 +5,5 @@ export { Radio } from "./RadioButton";
 export { RadioGroup } from "./RadioGroup";
 export { Checkbox } from "./Checkbox";
 export { CheckboxGroup } from "./CheckboxGroup";
+export { Switch } from "./Switch";
+export { SwitchGroup } from "./SwitchGroup";

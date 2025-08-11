@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchHello } from "../services/exampleService";
-import { 
+import {
     Logo,
     Button,
     Input,
     Radio,
     RadioGroup,
-    CheckboxGroup
+    CheckboxGroup,
+    Switch,
+    SwitchGroup
 } from "../components";
-import {
-    FaHome,
-    FaSearch
-} from "react-icons/fa";
+import { FaHome, FaSearch } from "react-icons/fa";
 
 interface HelloResponse {
   message: string;
@@ -23,6 +22,7 @@ export default function HelloPage() {
     const [loading, setLoading] = useState<boolean>(true);
     const [selected, setSelected] = useState("option1");
     const [checked, setChecked] = useState<string[]>(["option1"]);
+    const [switches, setSwitches] = useState<string[]>(["option1"]);
 
     useEffect(() => {
         fetchHello()
@@ -107,6 +107,49 @@ export default function HelloPage() {
                     { label: "Disabled", value: "disabled", state: "disabled" },
                 ]}
                 mode="light"
+            />
+
+            <CheckboxGroup
+                name="demoCheckboxGroupDark"
+                values={checked}
+                onChange={setChecked}
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                mode="dark"
+            />
+
+            <Switch label="Idle" state="idle" mode="light" />
+            <Switch label="Checked" state="checked" mode="light" />
+            <Switch label="Disabled" state="disabled" mode="light" />
+            <Switch label="Dark Idle" state="idle" mode="dark" />
+            <Switch label="Dark Checked" state="checked" mode="dark" />
+            <Switch label="Dark Disabled" state="disabled" mode="dark" />
+
+            <SwitchGroup
+                name="demoSwitchGroup"
+                values={switches}
+                onChange={setSwitches}
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                mode="light"
+            />
+
+            <SwitchGroup
+                name="demoSwitchGroupDark"
+                values={switches}
+                onChange={setSwitches}
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                mode="dark"
             />
 
             {loading && <p>Loading...</p>}
