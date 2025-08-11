@@ -1,44 +1,64 @@
 export const theme = {
   colors: {
-    primary: "#fe696a",         // Main accent (buttons, highlights)
-    secondary: "#4b566b",       // Secondary text, icons
-    background: "#fff",         // Main background
-    backgroundAlt: "#f6f9fc",   // Light section backgrounds
-    text: "#373f50",            // Main text
-    textLight: "#7d879c",       // Muted/secondary text
-    accent: "#fe696a",          // Accent (same as primary)
-    success: "#42d697",         // Success (green)
-    warning: "#fea569",         // Warning (orange)
-    info: "#25bcff",            // Info (blue)
-    dark: "#232f3e",            // Header/footer dark
-    border: "#e3e9ef",          // Card/divider border
-    muted: "#f3f5f9",           // Card backgrounds, subtle UI
+    primary: "#fe696a",
+    info: "#25bcff",
+    success: "#42d697",
+    warning: "#fea569",
+    secondary: "#4b566b",
+    dark: "#232f3e",
+    background: "#fff",
+    backgroundAlt: "#f6f9fc",
+    text: "#373f50",
+    textLight: "#7d879c",
+    accent: "#fe696a",
+    border: "#e3e9ef",
+    muted: "#f3f5f9",
+    button: {
+      primary: "#fe696a",
+      primaryText: "#fff",
+      info: "#25bcff",
+      infoText: "#fff",
+      success: "#42d697",
+      successText: "#fff",
+      warning: "#fea569",
+      warningText: "#fff",
+      secondary: "#4b566b",
+      secondaryText: "#fff",
+      dark: "#232f3e",
+      darkText: "#fff",
+      disabled: "#cfd8dc",
+      disabledText: "#7d879c",
+    },
+  },
+  buttons: {
+    fontWeight: 600,
+    borderRadius: "8px",
   },
   font: {
     body: "'Inter', sans-serif",
     heading: "'Rubik', 'Montserrat', sans-serif",
   },
   fontSizes: {
-    display1: "5rem",   // 80px
-    display2: "4.5rem", // 72px
-    display3: "4rem",   // 64px
-    display4: "3.5rem", // 56px
-    display5: "3rem",   // 48px
-    display6: "2.625rem", // 42px
-    h1: "2.5rem",       // 40px
-    h2: "2rem",         // 32px
-    h3: "1.75rem",      // 28px
-    h4: "1.5rem",       // 24px
-    h5: "1.25rem",      // 20px
-    xl: "1.25rem",      // 20px (Extra Large)
-    lg: "1.125rem",     // 18px (Large)
-    h6: "1rem",         // 16px
-    nav: "1rem",        // 16px (Navigation Link Regular)
-    md: "1rem",         // 16px (Regular)
-    sm: "0.875rem",     // 14px (Small)
-    navSm: "0.875rem",  // 14px (Navigation Link Small)
-    xs: "0.75rem",      // 12px (Extra Small)
-    navXs: "0.75rem",   // 12px (Navigation Link Extra Small)
+    display1: "5rem",
+    display2: "4.5rem",
+    display3: "4rem",
+    display4: "3.5rem",
+    display5: "3rem",
+    display6: "2.625rem",
+    h1: "2.5rem",
+    h2: "2rem",
+    h3: "1.75rem",
+    h4: "1.5rem",
+    h5: "1.25rem",
+    xl: "1.25rem",
+    lg: "1.125rem",
+    h6: "1rem",
+    nav: "1rem",
+    md: "1rem",
+    sm: "0.875rem",
+    navSm: "0.875rem",
+    xs: "0.75rem",
+    navXs: "0.75rem",
   },
   lineHeights: {
     display1: "96px",
@@ -88,6 +108,7 @@ export const theme = {
     sm: "0 2px 8px 0 rgba(60,72,88,0.06)",
     md: "0 4px 24px 0 rgba(60,72,88,0.10)",
     lg: "0 8px 32px 0 rgba(60,72,88,0.14)",
+    button: "0 2px 8px 0 rgba(60,72,88,0.08)",
   },
   breakpoints: {
     sm: "576px",
