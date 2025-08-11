@@ -56,4 +56,4 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
   </GroupWrapper>
 );
 
-export default RadioGroup;
+export { RadioGroup };
