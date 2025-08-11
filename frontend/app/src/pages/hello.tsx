@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import { fetchHello } from "../services/exampleService";
-import { Logo, Button, Input } from "../components";
-import Radio from "../components/RadioButton";
-import RadioGroup from "../components/RadioGroup";
-import { FaHome, FaSearch } from "react-icons/fa";
+import { 
+    Logo,
+    Button,
+    Input,
+    Radio,
+    RadioGroup,
+    CheckboxGroup
+} from "../components";
+import {
+    FaHome,
+    FaSearch
+} from "react-icons/fa";
 
 interface HelloResponse {
   message: string;
@@ -14,6 +22,7 @@ export default function HelloPage() {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [selected, setSelected] = useState("option1");
+    const [checked, setChecked] = useState<string[]>(["option1"]);
 
     useEffect(() => {
         fetchHello()
@@ -80,6 +89,18 @@ export default function HelloPage() {
                 name="demoGroup"
                 value={selected}
                 onChange={setSelected}
+                options={[
+                    { label: "Option 1", value: "option1" },
+                    { label: "Option 2", value: "option2" },
+                    { label: "Disabled", value: "disabled", state: "disabled" },
+                ]}
+                mode="light"
+            />
+
+            <CheckboxGroup
+                name="demoCheckboxGroup"
+                values={checked}
+                onChange={setChecked}
                 options={[
                     { label: "Option 1", value: "option1" },
                     { label: "Option 2", value: "option2" },
